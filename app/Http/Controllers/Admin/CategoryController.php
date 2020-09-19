@@ -39,7 +39,6 @@ class CategoryController extends Controller
              if ($request->isMethod('post')) { 
 
 
-               
 
                $errors      = false;
                $errorMsg    = array();
@@ -125,8 +124,7 @@ return redirect()->back()->withInput($request->input())->with('CategoryCreateErr
 
 
                    $categories= Category::create(array('name'=>$name,
-                         'created_by'=>Auth::user()->id,
-                         'parent_id'=>$parent_id,
+                        'parent_id'=>$parent_id,
 						 'image'=>$image_path,
                          "description"=>$description,
                          "meta_title"=>$meta_title,
@@ -402,17 +400,12 @@ return redirect()->back()->withInput($request->input())->with('CategoryeditError
       public  function deleteCategory($id){
 
            
-		   if($id==1 || $id==2)
-		   {
-			   return redirect()->back()->with('error', 'Root Category deletion not allowed!');
-			   
-		   }else
-		   {
+		 
             $catData=Category::find($id);
 		    
 		
 
-		   $productExist=ProductToCategory::where('category_id','=',$id)->get();
+		   $productExist=ProductToListing::where('category_id','=',$id)->get();
 		   if($productExist)
 		   {
 			   return redirect()->back()->with('error', 'Sorry!, Product are associated with this category!');
@@ -424,11 +417,7 @@ return redirect()->back()->withInput($request->input())->with('CategoryeditError
           
 
            return redirect()->back()->with('success', 'Successfully Deleted!');
-		   }
 		  
-		   
-		   return redirect()->back()->with('error', 'Sorry!, Working on it!');
-
             }    
 
 

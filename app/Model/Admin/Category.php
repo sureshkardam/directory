@@ -11,21 +11,7 @@ use App\Model\Admin\Listing;
 class Category extends Model
 {
 
-	protected $fillable = array('name',
-															'description',
-															'meta_title',
-															'meta_description', 
-															 'meta_keyword',
-															 'image',
-															 'parent_id',
-															 'top',
-															 'sort_order',
-															 'status',
-															 'created_at',
-															 'updated_at'
-
-														);
-
+	protected $guarded = [];
 	/**
 	 * The database table used by the model.
 	 *

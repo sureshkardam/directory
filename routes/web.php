@@ -60,6 +60,14 @@ Route::get('/home', 'HomeController@index')->name('admin.home');
 Route::get('/listing', 'ListingController@index')->name('admin.listing');
 Route::get('create/lisitng', 'ListingController@create')->name('admin.create.listing');
 
+
+
+//scraper
+
+Route::any('/scraper/list', 'ScraperController@getData')->name('scraper.list');
+Route::any('/get/scraper/listing', 'ScraperController@getListingData')->name('get.scraper.listing');
+
+
 //upload bulk sheet
 
 Route::get('/import/list', 'ImportController@listImport')->name('admin.import.list');

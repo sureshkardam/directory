@@ -31,6 +31,13 @@
           </a>
         </li>
 		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Import listing">
+          <a class="nav-link" href="{{ route('scraper.list') }}">
+            <i class="fa fa-fw fa-plus-circle"></i>
+            <span class="nav-link-text">Scraper list</span>
+          </a>
+        </li>
+		
 		
 		
 		<!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">

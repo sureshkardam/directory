@@ -12,11 +12,11 @@
 		<!-- Example DataTables Card-->
 		
 		<div class="col-sm-12">
-                <div class="row">
+                <div class="col-sm-12 text-right">
                    
-                    <div class="col-sm-6">
-                        <a href="{{route('admin.file.import')}}" >Import Listing</a>
-                    </div>
+                  
+                        <a class="btn_1 medium" href="{{route('admin.file.import')}}" >Import Listing</a>
+                   
                 </div>
 		</div>
 		
